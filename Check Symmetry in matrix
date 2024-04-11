@@ -1,0 +1,36 @@
+#include <stdio.h> 
+int main(){
+    int a,b;
+    scanf("%d %d",&a,&b);
+    if(a!=b){
+        printf("Rows not equal to columns");
+    }
+    else{
+    //initialize and take input
+        int matrix[a][b];
+        for(int i =0;i<a;i++){
+            for(int j=0;j<a;j++){
+                scanf("%d",&matrix[i][j]);
+            }
+        }
+    //checking for symentry
+    
+        int mark=0;
+        for(int i =0;i<a;i++){
+            for(int j=i;j<a;j++){
+                if(matrix[i][j]!=matrix[j][i]){
+                    mark=1;
+                    break;
+                }
+            }
+        }
+        
+        
+        if(mark==1){
+            printf("It is not a Symmetric Matrix");
+        
+        } else{
+            printf("It is Symmetic");
+        }
+    }
+}
